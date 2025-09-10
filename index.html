@@ -1,240 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
-
-  <title>Taxy</title>
-
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
-  <script src="java.js"></script>
-  <!-- Import this CDN to use icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+     <style>
+    #starfield {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+</style>
 </head>
+  <body>
 
-<body>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
-  <div class="Settings" id="Settings"> 
-    <button class="CloseSettings" onclick="ShowSettings()">x</button>
-    <div class="SettingsContent">
-      <div>
-        <div class="SettingParts">
-          <div id="OnlyLoggedIn">
-            <h2>Konto</h2>
-            <br>
-            <div class="AccountContent">
-              <div class="Flex-Row">
-                <p>Namn:</p>
-                <p class="AccountInfo" id="UsernameDis"></p>
-              </div>
-            </div>
-            <div class="AccountContent">
-              <div class="Flex-Row">
-                <p>Skapat:</p>
-                <p class="AccountInfo" id="KontoTimeDis"></p>
-              </div>
-            </div>
-            <br><br><br>
-            <button class="DelAccount" onclick="CreateAccount('Delete')">Radera Konto</button>
-          </div>
-        </div>
-
-        <div class="SettingParts">
-          <div id="OnlyLoggedOut">
-            <h2>No account</h2>
-            <br>
-            <div class="AccountContent">
-              <p> Seems like you're not logged into any account. Please log in or create an account!</p>
-            </div>
-          </div>
-          <div class="credits_title">Wall of names</div>
-          <div class="credit_content">no content currently</div>
-        </div>
-      </div>
-
-    </div>
+<div class="floating-card" id="floatingCard">
+  <div class="card-header" id="cardHeader">
+    <h2>Our Site Has Moved!</h2>
   </div>
-
-  <h1 class="site_name">Taxy</h1>
-
-
-
-  <div class="undertext">Official website</div>
-
-  <div class="tt_embed" id="OpenTiktok">
-    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@hyztax" data-unique-id="hyztax"
-      data-embed-type="creator" style="max-width: 280px; min-width: 388px; overflow-x: hidden;">
-      <section>
-        <a target="_blank" href="https://www.tiktok.com/@hyztax?refer=creator_embed">@hyztax</a>
-      </section>
-    </blockquote>
-    <script async src="https://www.tiktok.com/embed.js"></script>
+  <div class="card-body">
+    <p>Come explore our new site and check out whats new!</p>
+    <button class="btn">Check It Out</button>
   </div>
-
-  <button class="SettingsToggleBtn" onclick="ShowSettings()"></button>
-
-
-
-
-  <div class="Center-Anchors">
-    <div class="länk">
-      <a href="https://discord.com/channels/1227952102802722876/1227957236207456347" ;>HELP</a>
-    </div>
-
-    <div class="länk"><a href="FAQ.html" ;>FAQ</a>
-    </div>
-  </div>
-  <div class="ShowOnHover" onclick="ShowOnClick(this)">
-    <div class="Logo" id="Logo">&lt;</div>
-    <div class="Position-For-Btns">
-      <div class="Flex-For-Btns">
-        <a href="https://discord.gg/TaxHood">
-          <img src="bilder/discord.png" alt="Discord" id="Discord-btn" class="LogoBtn"
-            style="width: 45px; height: 45px; margin-bottom: 7px;" onclick="ShowBtn(1)">
-        </a>
-
-        <a href="https://www.youtube.com/@Hyztax">
-          <img src="bilder/youtube.png" id="Youtube-btn" alt="Youtube" class="LogoBtn"
-            style="width: 45px; height: 45px; margin-bottom: -5px;" onclick="ShowBtn(2)">
-        </a>
-        <button class="SPCbtn" onclick="ShowSpotifyCont(this)" id="toggleButton">
-          <img src="bilder/spotify.png" alt="spotify" class="LogoBtn"
-            style="width: 50px; height: 50px; margin-top: 10px;" id="Spotify-btn">
-        </button>
-        <a>
-          <img src="bilder/tiktok.png" alt="Tiktok" onclick="close1 = !close1; ShowBtn(3)" id="Tiktok-btn"
-            class="LogoBtn" style="width: 45px; height: 45px; margin-top: 5px;">
-        </a>
-
-        <a href="https://snapchat.com/t/74agz9w5">
-          <img src="https://cdn2.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-snapchat-circle-512.png" alt="SnapChat"
-            onclick="ShowBtn(4)" id="SnapChat-btn" class="LogoBtn" style="width: 45px; height: 45px; margin-top: 5px;">
-        </a>
-      </div>
-    </div>
-  </div>
-
-
-
-  <div class="Button_Style" onclick="openModal()">
-    <h2 style=" cursor: pointer;">My games</h2>
-    <img src="" alt="Game 1 Image" class="column-image">
-  </div>
-  <div id="myModal" class="modal">
-    <div class="modal-content">
-      <div class="FlexForModal">
-
-     <!-- NEW Game Section -->
-      <div class="new-game-section">
-        <a href="https://www.roblox.com/games/113149714573083/UPD-Death-Experience" class="new-game">
-          <img src="bilder/DeathExp.png" alt="Game Image" class="game-image">
-          <span class="new-label">NEW</span>
-        </a>
-      </div>
-
-
-        <!--game 1-->
-        <div class="game">
-          <a href="https://www.roblox.com/games/103851061935344/Da-bullet">
-            <img src="https://tr.rbxcdn.com/180DAY-17c5290f2ea2f54c287597fca8ced107/256/256/Image/Webp/noFilter" alt="Game 1 Image">
-          </a>
-        </div>
-
-
-        <!-- Game 2 -->
-        <div class="game">
-          <a href="https://www.roblox.com/games/14097235651/Dead-end">
-            <img src="https://tr.rbxcdn.com/180DAY-a0f073bb846fdabe0cae3af0a4d918a1/256/256/Image/Webp/noFilter" alt="Game 2 Image">
-          </a>
-          </div>
-      </div>
-
-   
-
-
-    </div>
-
-
-    <span class="close" onclick="closeModal()">&times;</span>
-  </div>
-
-
-<div class="Button_Style" onclick="window.open('https://hyztax.github.io/Velox', '_blank')">
-    <h2>Chat</h2>
 </div>
 
+<script>
+const button = document.querySelector(".btn");
 
-
-  <div class="MainLoginBdy" id="MainLoginBdy">
-    <button class="CloseLogin" onclick="ShowLogin('')">X</button>
-    <div class="LoginDis">
-      <h1>Logga In</h1>
-      <br><br>
-      <h3>Användarnamn</h3>
-      <input class="UsernameInput" id="UsernameLogin" placeholder="Användarnamn" type="text">
-      <br><br>
-      <h3>Lösenord</h3> 
-      <div class="Flex-Col"><input class="PasswordInput" id="LoginPassword" placeholder="Lösenord" type="password">
-        <button class="TogglePass" onclick="ShowPasword(this,'1')"></button></div>
-      <br><br>
-      <p class="ErrorNotif1" id="ErrorNotif1"></p>
-      <br>
-      <button class="LoginBtn" onclick="CreateAccount('Work')">Logga in</button>
-      <br><br>
-      <p>Har du inget konto?</p>
-      <br>
-      <button class="LoginBtn2" onclick="ShowLogin('CreateNew')">Skapa ett!</button>
-    </div>
-  </div>
-
-   
-
-  <div class="MainLoginBdy" id="MainLoginBdy2">
-    <button class="CloseLogin" onclick="ShowLogin('CloseNew')">X</button>
-    <div class="LoginDis">
-      <h1>Skapa Konto</h1>
-      <br><br>
-      <h3>Användarnamn</h3>
-      <input class="UsernameInput" id="Usrn" type="text" placeholder="Användarnamn">
-      <div style="margin: 5px;"></div>
-      <p style="color: rgb(224, 208, 63);">(Minst 5 tecken)</p>
-      <br><br>
-      <h3>Lösenord</h3>
-      <div class="Flex-Col"><input class="PasswordInput" id="LoginPassword2" type="password" placeholder="Lösenord">
-        <button class="TogglePass" onclick="ShowPasword(this,'2')"></button></div>
-        <div style="margin: 5px;"></div>
-        <p style="color: rgb(224, 208, 63);">(Minst 8 tecken)</p>
-
-      <br><br>
-      <p class="ErrorNotif2" id="ErrorNotif2"></p>
-      <br>
-      <button class="LoginBtn" onclick="CreateAccount('')">Skapa</button>
-    </div>
-  </div>
-
-  <div class="Versions">V.5.4</div>
-
-
-  <div id="spotifyContainer" class="spotifyContainer">
-    <iframe class="spotify-embed"
-      src="https://open.spotify.com/embed/playlist/7p9ALjNzssa5ePbcIaWGH2?utm_source=generator" width="302" height="302"
-      frameborder="0" allowfullscreen=""
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-  </div>
-
-
- 
+button.addEventListener("click", () => {
+  window.location.href = "https://hyztax.github.io/Velox/"; // Replace with your new site URL
+});
+</script>
 
 
 
 
+
+
+   <canvas id="starfield"></canvas>
+  <script src="stars.js"></script>
+  <script src="java.js"></script>
 </body>
-
 </html>

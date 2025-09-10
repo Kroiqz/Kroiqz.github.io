@@ -1,0 +1,137 @@
+* {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: rgb(24, 24, 29);
+  position: relative;
+  overflow: hidden;
+}
+
+
+.site_name {
+  margin-top: 30px;
+  font-size: xxx-large;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 2px 3px rgb(1, 1, 1);
+  font-family: verdana;
+}
+
+.Versions {
+  position: absolute;
+  bottom: 15px;
+  left: 97%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+  .Versions {
+    left: 94%;
+  }
+}
+
+.undertext {
+  position: absolute;
+  top: 85px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 17px;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 2px 3px rgb(0, 0, 0);
+  font-family: verdana;
+}
+
+.tillbaks {
+  position: fixed;
+  margin-top: -30px;
+  margin-left: 45px;
+  padding: 10px;
+  background-color: rgba(39, 37, 37, 0.397);
+  border-radius: 12px;
+}
+
+.tillbaks a {
+  color: white !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .tillbaks {
+    margin-top: -20px;
+    margin-left: 25px;
+    width: auto;
+  }
+
+  .tillbaks a:visited {
+    color: white;
+  }
+}
+
+.ScrollAble {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: calc(100% - 190px);
+  width: 50%;
+  height: 60%;
+  color: rgb(176, 181, 179);
+  text-shadow: 0 0 5px rgb(102, 102, 102);
+  font-family: verdana;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: rgba(0, 0, 0, 0.13);
+  box-shadow: 0 0 10px 5px rgba(29, 28, 28, 0.37);
+  border-radius: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+  .ScrollAble {
+    max-height: 80%;
+    width: 90%;
+  }
+}
+
+.Container {
+  width: 80%;
+  margin: 0 12%;
+  margin-top: 50px;
+}
+
+.Container h1 {
+  text-align: center;
+}
+
+.verified-text {
+  color: #3dd48b;
+}
+
+.checkmark-text {
+  color: #2b62ec;
+}
+
+.partner-text {
+  color: #b04abc;
+}
+
+/* Scrollbar styling */
+.ScrollAble::-webkit-scrollbar {
+  background-color: rgba(24, 23, 23, 0);
+  border-radius: 8px;
+}
+
+.ScrollAble::-webkit-scrollbar-thumb {
+  background-color: rgba(36, 34, 34, 0);
+  border-radius: 8px;
+}
+
+.ScrollAble::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(58, 55, 55, 0);
+}
